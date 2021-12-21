@@ -182,6 +182,16 @@
   display: none;
 }
 
+.hambergur--second{
+    display: none;
+}
+
+.menu{
+    display: none;
+    @include text(600, 16px, 24px);
+    margin: 0;
+}
+
 @media only screen and(max-width: 1100px) {
   .header__top {
     flex-direction: column;
@@ -237,6 +247,7 @@
     flex-grow: 1;
     margin-right: 0;
     margin-bottom: 0;
+    z-index: 10;
   }
 
   .header__top {
@@ -254,12 +265,40 @@
     display: block;
     padding: 4px;
     border: 1px solid #cb8734;
+    z-index: 10;
   }
 
   .hambergur {
     display: block;
     background-color: transparent;
     border: none;
+    z-index: 10;
+  }
+
+  .header--active .phone__link{
+      display: none;
+  }
+
+  .header--active .menu{
+      display: block;
+      z-index: 10;
+      margin: 18px 0;
+  }
+
+  .header--active .hambergur{
+      display: none;
+  }
+
+  .header--active .hambergur--second{
+      display: block;
+      margin-left: auto;
+      border: none;
+      background-color: transparent;
+      z-index: 10;
+  }
+
+  .header--active .header-top__image{
+      display: none;
   }
 
   .header--active .header-bottom {
@@ -271,7 +310,7 @@
     width: 100%;
     height: 100%;
     display: block;
-    padding-top: 60px;
+    padding-top: 88px;
   }
 
   .header--active .header-bottom__list--first {
